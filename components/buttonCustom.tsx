@@ -1,11 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const ButtonCustom = () => {
+export interface ButtonCustomProps {
+    title: string;
+    onPress: () => void;
+}
+
+const ButtonCustom = (props: ButtonCustomProps) => {
+    const {title, onPress} = props;
     return (
-        <View style={styles.container}>
-            <Text>ButtonCustom</Text>
-        </View>
+        <TouchableOpacity onPress={onPress}>
+            <Text>{title}</Text>
+        </TouchableOpacity>
     );
 };
 
